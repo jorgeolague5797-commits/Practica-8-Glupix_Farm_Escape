@@ -1,0 +1,9 @@
+COPIA AQUÍ TUS FUENTES
+
+Para que Godot no use textos default, copia manualmente tus fuentes a esta carpeta:
+
+assets/fonts/PixelStorm.ttf
+assets/fonts/Thin Sans.ttf
+assets/fonts/BoldPixels.otf
+
+El proyecto las detecta automáticamente si están aquí.

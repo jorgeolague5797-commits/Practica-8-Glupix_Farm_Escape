@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://title_glupix"]
+
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/title_space_bg.png" id="2_bg"]
+[ext_resource type="AudioStream" path="res://audio/title_music.wav" id="3_music"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.05, 0.07, 0.1, 0.78)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.67, 0.3, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.32)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterBox" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/CenterBox"]
+custom_minimum_size = Vector2(560, 320)
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/CenterBox/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MarginTop" type="MarginContainer" parent="CanvasLayer/CenterBox/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_bottom = 8
+
+[node name="Title" type="Label" parent="CanvasLayer/CenterBox/Panel/VBox/MarginTop"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83, 1, 0.46, 1)
+theme_override_colors/font_outline_color = Color(0.08, 0.1, 0.08, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+text = "GLUPIX FARM ESCAPE"
+
+[node name="Subtitle" type="Label" parent="CanvasLayer/CenterBox/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.9, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+text = "Glupix en el sistema solar"
+
+[node name="Story" type="Label" parent="CanvasLayer/CenterBox/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "Presiona DESPEGAR para iniciar el cómic de Glupix y comenzar tu aventura en la granja."
+
+[node name="DespegarButton" type="Button" parent="CanvasLayer/CenterBox/Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 60)
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "DESPEGAR"
+size_flags_horizontal = 4
+
+[node name="Hint" type="Label" parent="CanvasLayer/CenterBox/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87, 0.87, 0.87, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+text = "Disfruta la aventura"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_music")
+volume_db = -8.0
+autoplay = false
+
+[connection signal="pressed" from="CanvasLayer/CenterBox/Panel/VBox/DespegarButton" to="." method="_on_despegar_pressed"]

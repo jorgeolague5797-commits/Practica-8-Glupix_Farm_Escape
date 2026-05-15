@@ -1,0 +1,13 @@
+Coloca aquí tu fuente de píxeles.
+
+Recomendado:
+- BoldPixels.otf
+
+También puede funcionar:
+- boldpixels.ttf
+
+El proyecto ya busca estas rutas automáticamente:
+res://assets/fonts/BoldPixels.otf
+res://assets/fonts/boldpixels.ttf
+
+No cambies el nombre del archivo si quieres que se aplique automáticamente.

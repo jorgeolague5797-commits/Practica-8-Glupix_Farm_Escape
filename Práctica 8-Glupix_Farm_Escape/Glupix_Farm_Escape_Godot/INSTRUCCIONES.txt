@@ -1,0 +1,182 @@
+INSTRUCCIONES
+
+Versión v30:
+- Cuando una vaca atrapa a Glupix aparece un aviso en pantalla.
+- El aviso dice que la vaca atrapó al jugador, resta 100 puntos y vuelve al inicio.
+- El mensaje desaparece automáticamente después de unos segundos.
+- Se mantiene el camino largo con secciones de 2, 3 y 4 carriles de vacas.
+
+
+Versión v31:
+- Se reemplazaron las barreras café simples por vallas de madera de granja más detalladas.
+- Las vallas ahora tienen postes, tablas verticales y travesaños horizontales a ambos lados del camino.
+
+
+Versión v32:
+- Se agregaron los sonidos menu.mp3 y win.mp3.
+- menu.mp3 suena al usar botones de menú, pausa, configuración, cómic y DESPEGAR.
+- win.mp3 suena cuando Glupix llega a la meta y gana.
+
+
+Versión v33:
+- menu.mp3 ya NO suena en botones.
+- menu.mp3 sólo empieza cuando se abre el menú de pausa con ESC/P.
+- menu.mp3 se detiene al cerrar el menú, reanudar, reiniciar o salir.
+- win.mp3 se mantiene al ganar.
+
+
+Versión v34:
+- Pasto remodelado con capas, parches y matas de césped.
+- Carriles de tierra más trabajados con huellas, bordes y piedras.
+- Se añadieron obstáculos de granja más detallados: pacas, cajones, bebedero, lecheras, costales y carretilla.
+
+
+Versión v35:
+- Se añadieron árboles y arbustos decorativos.
+- Se modelaron charcos de barro/lodo.
+- Se agregaron props grandes de granja: granero decorativo, molino, tractor y señales.
+
+
+Versión v36:
+- Se eliminó la meta final como fin del juego.
+- Ahora la línea blanca funciona como checkpoint/procedural trigger.
+- Al cruzarla, se genera más camino automáticamente.
+- Los nuevos tramos alternan secciones de 2, 3 y 4 carriles de vacas.
+- La velocidad sube poco a poco para aumentar la dificultad.
+- El score ahora representa la mejor distancia recorrida, con penalización de -100 por cada vaca.
+
+
+Versión v37:
+- Los tramos infinitos después de cada raya ahora son mucho más largos.
+- La cantidad de carriles se randomiza en cada sección.
+- Cada tramo procedural puede tener varias secciones con 2, 3, 4 o hasta 5 carriles.
+- También se randomizan descansos, velocidades y decoración para que no se sienta repetitivo.
+
+
+Versión v38:
+- Se quitó el pollo decorativo del inicio.
+- Ahora hay un carril especial de pollos rápidos estilo tren de Crossy Road.
+- Antes de pasar la manada de pollos suena una alerta.
+- La manada cruza muy rápido y puede atrapar a Glupix.
+- También aparecen carriles de pollos en algunos tramos infinitos.
+- Las vacas ahora van un poco más rápido.
+- Los tramos infinitos se mantienen largos y con carriles randomizados.
+
+
+Versión v39:
+- Los pollos ahora miran hacia la derecha según el carril y tienen animación de salto/balanceo.
+- Dejan partículas de polvo en cubitos al correr.
+- El carril de pollos fue rediseñado para parecer corral de granja, no carretera.
+- Se mejoró el detalle del terreno, césped y caminos de tierra.
+- Se añadió cielo azul con WorldEnvironment y fondo más agradable.
+- Se ampliaron las bases laterales para ocultar fondos grises y zonas feas/bugueadas.
+
+
+Versión v40:
+- Se corrigió la orientación de los pollos.
+- Se añadió límite lateral para que el jugador no se salga del corral.
+- Se eliminó la línea blanca visual y ahora los tramos se generan por proximidad para evitar el bug.
+- Se agregó GAME OVER al ser atrapado, con tiempo y score, y opción de reiniciar.
+- Se quitó la mecánica de restar 100 puntos al morir.
+- Se redujeron solapes de decoración en tramos procedurales.
+
+Versión v41:
+- Se quitó Intentos del HUD.
+- Se mejoró el cielo/fondo azul del entorno.
+- Se añadieron más obstáculos decorativos.
+- Las vacas ahora tienen animación de movimiento.
+- La cámara mira un poco más hacia delante para mostrar más cielo.
+
+Versión v42:
+- Se regresó la cámara al estilo anterior.
+- Se eliminó la pieza verde grande que aparecía bugueada en el fondo.
+- Se redujo el tamaño del HUD izquierdo y se quitó espacio sobrante.
+- Se compactó ligeramente el panel de objetivo.
+
+
+Versión v43:
+- Se quitó el texto "Música de fondo activada" en la pantalla inicial.
+- Se bajó un poco el volumen predeterminado de la música.
+- Se cambió el texto central de bienvenida por uno más limpio.
+
+
+Versión v44:
+- En la pantalla inicial, el texto inferior ahora dice: "Disfruta la aventura".
+- Se aumentó un poco la hitbox de las vacas para que el choque sea más consistente.
+
+
+Versión v45:
+- Se agregó la imagen del logo de Glupix como icono del proyecto.
+- El nombre del proyecto ahora es GLUPIX FARM ESCAPE.
+- Se agregó gameover.mp3 como sonido de Game Over cuando atrapan al alien.
+
+
+Versión v46 Práctica 8:
+- Se agregaron coleccionables espaciales detallados: Mini OVNI, Planeta Tierra, Mini alien, Cristal espacial y Núcleo de energía.
+- Se agregó contador de Artefactos en HUD y sonido de recolección.
+- Se agregó HighscoreManager con SQLite si está disponible y fallback local.
+- Se agregó APIManager con Advice Slip API y efecto temporal sobre velocidad de vacas.
+- README.md actualizado con coleccionables, base de datos, API y controles.
+
+
+Versión v47:
+- Los obstáculos de granja ahora bloquean el movimiento de Glupix.
+- Se agregó una validación de casilla ocupada para evitar atravesar props estáticos.
+- Se limpió el HUD de la API: ya no muestra el consejo largo en inglés.
+- La API ahora aparece como evento de gameplay: Tormenta espacial o Campo gravitacional.
+
+
+Versión v48:
+- Se añadió variedad de eventos externos.
+- El HUD ahora muestra "Evento" sin mencionar "API".
+- Los eventos se activan cada 3 artefactos recuperados.
+- Los artefactos aparecen cada 500 puntos.
+- El Game Over ahora muestra un icono de advertencia y consejos rotativos.
+
+
+Versión v49:
+- Se ajustó el panel de Game Over para que no se corte en pantalla.
+- Se compactaron botones, márgenes y textos del menú.
+- El HUD ahora usa el mismo tamaño y estilo de letra en tiempo, score, artefactos, mejor y evento.
+- El texto de evento fue acortado para verse limpio sin mencionar API.
+
+
+Versión v50:
+- Se ajustó HighscoreManager para usar SQLite en user://game_data.db.
+- La tabla highscores ahora está documentada con los campos solicitados:
+  id, player_name, max_score y date.
+- El registro principal usa id = 1 y se actualiza si el score actual supera el mejor guardado.
+- Se agregó SQLITE_CONFIGURACION.md con pasos para instalar godot-sqlite.
+
+
+Versión v51:
+- Se agregó botón ★ al HUD para abrir el panel de scores.
+- El panel muestra máximo histórico y últimos 10 scores.
+- HighscoreManager ahora inserta cada partida en SQLite.
+- La tabla highscores conserva los últimos 10 registros y el máximo histórico.
+
+
+Versión v53:
+- Los artefactos aparecen menos: cada 2000 puntos.
+- Solo puede haber 1 artefacto activo al mismo tiempo.
+- Los tipos de artefactos se alternan para sentirse únicos.
+- Los eventos espaciales ahora se activan cada 30 segundos, no al recoger artefactos.
+- El HUD muestra cuenta regresiva de evento.
+
+
+Versión v54:
+- Se aplicó una paleta más cálida al mapa y objetos generados.
+- Se bajó la exposición y la luz principal para evitar colores quemados/blancos.
+- Se cambió el cielo e iluminación a tonos más cálidos.
+- Se redujo el brillo/emisión de los artefactos para que no se vean sobreexpuestos.
+
+
+Versión v55:
+- Se compactó el HUD para quitar el cuadro verde vacío.
+- Se separó el botón de scores para que no se amontone con el HUD.
+- El texto de evento ahora ocupa una sola línea.
+- Se redujeron tamaños y separaciones del HUD para verse más limpio.
+
+
+Versión v56:
+- Los artefactos ahora aparecen cada 3000 puntos.

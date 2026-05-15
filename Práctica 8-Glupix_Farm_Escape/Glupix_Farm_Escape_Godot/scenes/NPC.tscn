@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://npc_vaca_v4"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_npc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npc"]
+size = Vector3(1.4, 1.55, 1.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hit"]
+size = Vector3(1.65, 1.75, 1.65)
+
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_npc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("BoxShape3D_npc")
+
+[node name="ModelRoot" type="Node3D" parent="."]
+
+[node name="HitArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_hit")

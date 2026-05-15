@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://comic_glupix_fun"]
+
+[ext_resource type="Script" path="res://scripts/comic_intro.gd" id="1_script"]
+[ext_resource type="AudioStream" path="res://audio/comic_music.wav" id="2_music"]
+
+[node name="ComicIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_music")
+volume_db = -9.0
+autoplay = false
